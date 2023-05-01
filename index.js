@@ -1,5 +1,3 @@
-require("./utils.js");
-
 require("dotenv").config();
 
 const express = require("express");
@@ -26,11 +24,7 @@ const mongodb_session_secret = process.env.MONGODB_SESSION_SECRET;
 const node_session_secret = process.env.NODE_SESSION_SECRET;
 /* END secret section */
 
-<<<<<<< HEAD:api/index.js
 var { database } = require("./databaseConnection.js");
-=======
-var { database } = include("databaseConnection.js");
->>>>>>> parent of 972b78e (deploying website):index.js
 
 const userCollection = database.db(mongodb_database).collection("users");
 
@@ -353,8 +347,8 @@ app.get("*", (req, res) => {
   res.send("Page not found - 404");
 });
 
-// app.listen(port, () => {
-//   console.log("Node application listening on port " + port);
-// });
+app.listen(port, () => {
+  console.log("Node application listening on port " + port);
+});
 
 module.exports = app;
