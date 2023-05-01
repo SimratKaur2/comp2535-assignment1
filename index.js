@@ -26,7 +26,11 @@ const mongodb_session_secret = process.env.MONGODB_SESSION_SECRET;
 const node_session_secret = process.env.NODE_SESSION_SECRET;
 /* END secret section */
 
+<<<<<<< HEAD:api/index.js
 var { database } = require("./databaseConnection.js");
+=======
+var { database } = include("databaseConnection.js");
+>>>>>>> parent of 972b78e (deploying website):index.js
 
 const userCollection = database.db(mongodb_database).collection("users");
 
@@ -266,7 +270,7 @@ app.get("/members", requireLogin, (req, res) => {
   res.send(html);
 });
 
-app.use(express.static(__dirname + "/../public"));
+app.use(express.static(__dirname + "/public"));
 
 app.get("/login", (req, res) => {
   const emptyFields = req.query.emptyFields;
