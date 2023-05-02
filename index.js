@@ -57,7 +57,7 @@ function requireLogin(req, res, next) {
   } else {
     //user is redirected to the login page
     console.log("you are not logged in");
-    res.redirect("/login");
+    res.redirect("/");
   }
 }
 
